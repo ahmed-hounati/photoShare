@@ -1,15 +1,26 @@
-import { Text, View } from "react-native";
+import Colors from "@/constants/Colors";
+import { Image, StatusBar, StyleSheet, Text, View } from "react-native";
 
 export default function Index() {
   return (
     <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      style={styles.container}
     >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+      <StatusBar backgroundColor={Colors.black} barStyle={"light-content"} />
+      <Image source={require('../../assets/images/splash-icon.png')} style={styles.text} />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Colors.black,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
+    width: 200,
+    height: 200
+  }
+})
